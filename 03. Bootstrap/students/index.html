@@ -11,13 +11,21 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+
+    <!-- Angular JS -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <script src="https://use.fontawesome.com/be36c20b93.js"></script>
+
     <style type="text/css">
-      #title:{
+      h1{
         text-align: center;
       }
+      
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,57 +34,48 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app="App">
 
-    <div class="container-fluid">
+    <div class="container" ng-controller="Ctrl as ctrl">
      
-      <h1 style="text-align:center !important">Students</h1>
-      
-
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-          <div class="col-md-4">
-              <h3>Santiago Robayo</h3>
-              <div class="row">
-                <div class="col-md-4">
-                  <h4>@_Zantler</h4>
-                </div>
-                <div class="col-md-8">
-                  <h4><a href="https://github.com/srobayo222">https://github.com/srobayo222</a></h4>
-                </div>
-              </div>              
-          </div><!-- .col-md-4 -->
-          <div class="col-md-4">
-            <h3>Maria Camila Remolina Gutiérrez</h3>
-              <div class="row">
-                <div class="col-md-4">
-                  <h4>@_Zantler</h4>
-                </div>
-                <div class="col-md-8">
-                  <h4><a href="https://github.com/srobayo222">https://github.com/srobayo222</a></h4>
-                </div>
-              </div> 
-          </div><!-- .col-md-4 -->
-          <div class="col-md-4">
-            <h3>Santiago Robayo</h3>
-              <div class="row">
-                <div class="col-md-4">
-                  <h4>@_Zantler</h4>
-                </div>
-                <div class="col-md-8">
-                  <h4><a href="https://github.com/srobayo222">https://github.com/srobayo222</a></h4>
-                </div>
-              </div> 
-          </div><!-- .col-md-4 -->
-          <hr>
-
-        </div>
-        <div class="col-md-1"></div>
-
-        
+      <h1>WebDev 101 Students</h1>
+      <div class="form-group">
+        <!-- <label for="usr">:</label> -->
+        <input type="text" placeholder="Search..." ng-model="search" class="form-control">
       </div>
-      <!-- .row -->
+      
+      <div class="row" >
+        
+        <div class="col-md-4 panel panel-default" ng-repeat="s in ctrl.students | filter : search">
+
+        <div class="panel-body">
+          
+          
+          <div class="row">
+            <div class="col-md-8 col-xs-8">{{s.name}}
+              <p class="muted">{{s.id}}</p>
+              <p>{{s.email}}</p>
+              
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <img width="100px" class="img-rounded" src="{{s.img}}" alt="profile pic of {{s.name}}">
+            </div>
+            
+          </div>
+          <div class="col-md-3"></div>
+          <div class="row">
+            <div class="btn-group">
+              <a target="_blank" href="{{s.github}}" class="btn btn-primary"><i class="fa fa-github fa-fw"></i></a>
+              <a target="_blank" href="https://twitter.com/{{s.twt}}" class="btn btn-primary"><i class="fa fa-twitter fa-fw"></i></a>
+              <a target="_blank" href="" class="btn btn-primary"><i class="fa fa-envelope fa-fw"></i></a>
+            </div>
+          </div>
+          <!-- <div class="col-md-1"></div> -->
+        </div>
+          
+          
+        </div>
+      </div>
 
 
 
