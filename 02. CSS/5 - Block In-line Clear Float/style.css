@@ -7,4 +7,9 @@ li{
 }
 .pull-right{
 	float: right;
+	height: 50px;
+}
+.clear{
+	display: block;
+	clear: both;
 }
