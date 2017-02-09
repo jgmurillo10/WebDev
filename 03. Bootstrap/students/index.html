@@ -25,6 +25,10 @@
       h1{
         text-align: center;
       }
+      .student{
+        /*margin-right: 10px;*/
+        /*margin-right:5px;*/
+      }
       
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,7 +50,7 @@
       
       <div class="row" >
         
-        <div class="col-md-4 panel panel-default" ng-repeat="s in ctrl.students | filter : search">
+        <div class="student col-md-4 panel panel-default" ng-repeat="s in ctrl.students | filter : search">
 
         <div class="panel-body">
           

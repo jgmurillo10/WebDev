@@ -1,0 +1,10 @@
+li{
+	display: inline-block;
+	height: 40px;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
